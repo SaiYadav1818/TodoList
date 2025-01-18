@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import './todo.css'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Container,Row } from 'react-bootstrap'
 
 export default function Todo() {
@@ -13,7 +15,7 @@ let finaldata=[...count,todolist];
 setCount(finaldata);
   }
   else{
-    alert("already is there ")
+  toast.error("Already Exist!")
   }
 
   
@@ -26,12 +28,14 @@ let list =count.map((v,i)=>
   )
 })
   return (
+    
 <div>
   <Container>
-    <Row style={{marginTop:"20px"}}>
+<h1 style={{marginTop:"10px",color:"orange",fontFamily:"Sans-serif"}}>Todo List</h1>
+    <Row style={{marginTop:"100px"}}>
     <form onSubmit={textarray}>
-    <input typeof='text' name='tname'></input>
-    <button>Save</button>
+    <input typeof='text' name='tname' className='inp' placeholder='Enter Your Text'></input>
+    <button className='btn btn-success' >Save</button>
   </form>
     </Row>
 
@@ -43,7 +47,7 @@ let list =count.map((v,i)=>
 
    
   </Container>
-
+  <ToastContainer />
 </div>
   )
 }
@@ -57,7 +61,7 @@ function Call({v,index,count,setCount}) {
     setC(!c);
   }
   return (
-    <Container>
+    <Container >
       <Row>
       <div className='boxes'>
       <ul className={(c)?'line':''} onClick={checkStatus}>

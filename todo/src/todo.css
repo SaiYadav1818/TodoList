@@ -1,3 +1,7 @@
+body{
+    background-color: aqua !important;
+    height: auto;
+}
 form  button {
 position: relative;
 left:30px;
@@ -41,3 +45,31 @@ text-align: left;
     color: red !important;
     background-color: yellow!important;
 }
+.inp{
+    height: 50px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.inp:hover {
+    border-color: #007bff; 
+    background-color: #f9f9f9;
+  }
+  .inp:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  .inp::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+  
+
+  .inp:focus::placeholder {
+    color: transparent; 
+  }
+  .inp:focus {
+    animation: glow 1.5s infinite;
+  }
